@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Journey: Pilot Spotlight | Edusport Travel</title>
+<style>
+  :root{
+    --navy:#034EA1;
+    --navy-dark:#023d80;
+    --green:#009040;
+    --green-light:#e8f6ee;
+    --amber:#f2a900;
+    --ink:#1c2430;
+    --grey:#5b6472;
+    --line:#e3e7ee;
+    --paper:#ffffff;
+    --bg:#eef1f6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .page{
+    max-width:1000px; margin:32px auto; background:var(--paper);
+    border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(20,30,60,.12);
+    position:relative;
+  }
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; background:#fff; border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:800; color:var(--navy); font-size:15px; letter-spacing:.2px;}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;}
+  .hero{background:linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%); color:#fff; padding:36px 28px 28px;}
+  .hero .eyebrow{font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:#bcd4f2; font-weight:700; margin-bottom:10px;}
+  .hero h1{margin:0 0 10px; font-size:30px; line-height:1.25;}
+  .hero h1 .accent{color:#5ee0a0;}
+  .hero p{margin:0; color:#dbe7f7; font-size:15px; max-width:720px;}
+  .leadstrip{background:var(--green); color:#fff; padding:12px 28px; font-size:14px; font-weight:700;}
+  .body{padding:30px 28px 40px;}
+  .print-btn{
+    background:var(--navy); color:#fff; border:none;
+    padding:8px 14px; border-radius:999px; font-size:12px; font-weight:700; cursor:pointer;
+    white-space:nowrap; flex-shrink:0;
+  }
+  .print-btn:hover{background:var(--navy-dark);}
+  nav.jump{background:var(--green-light); border:1px solid #cdeedb; border-radius:12px; padding:16px 20px; margin:0 0 28px;}
+  nav.jump h3{margin:0 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--green);}
+  nav.jump ol{margin:0; padding-left:18px; columns:2; column-gap:24px; font-size:13.5px;}
+  nav.jump li{margin-bottom:5px;}
+  nav.jump a{color:var(--navy); text-decoration:none;}
+  nav.jump a:hover{text-decoration:underline;}
+  section{margin:0 0 34px; scroll-margin-top:20px;}
+  h2{font-size:21px; color:var(--navy); margin:0 0 4px; border-bottom:2px solid var(--line); padding-bottom:10px; display:flex; align-items:center; gap:8px;}
+  h2 .num{color:var(--green); margin-right:6px;}
+  .sub{color:var(--grey); font-size:13.5px; margin:6px 0 16px;}
+  .backtop{display:inline-block; font-size:12px; color:var(--navy); text-decoration:none; margin-top:6px;}
+  .backtop:hover{text-decoration:underline;}
+  .callout{border-radius:12px; padding:16px 18px; margin:16px 0; font-size:14px;}
+  .callout.info{background:#eaf2fc; border:1px solid #cfe0f7;}
+  .callout.warn{background:#fff6e6; border:1px solid #f3ddad;}
+  .callout.good{background:var(--green-light); border:1px solid #cdeedb;}
+  .callout strong{display:block; margin-bottom:4px; color:var(--navy);}
+  .callout.warn strong{color:#9a6b00;}
+  .callout.good strong{color:var(--green);}
+  .spotlight{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:14px 0;}
+  .spotlight-head{background:var(--navy); color:#fff; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; gap:12px;}
+  .spotlight-head h3{margin:0; font-size:18px;}
+  .spotlight-head .venue{font-size:12.5px; color:#bcd4f2; margin-top:2px;}
+  .spotlight-head .flag{font-size:30px;}
+  .spotlight-body{padding:6px 0 10px;}
+  .mailer{padding:16px 20px; border-bottom:1px solid var(--line); display:flex; gap:14px;}
+  .mailer:last-child{border-bottom:none;}
+  .grid-pos{
+    flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--green-light); color:var(--green);
+    font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center;
+  }
+  .mailer-content{flex:1;}
+  .mtitle{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .mname{font-weight:700; color:var(--ink); font-size:14.5px;}
+  .mtiming{font-size:12px; color:var(--green); font-weight:700; background:var(--green-light); padding:2px 10px; border-radius:999px; white-space:nowrap;}
+  .msubject{font-size:13px; color:var(--grey); margin-top:4px; font-style:italic;}
+  .mailer ul{margin:8px 0 0; padding-left:18px; font-size:13.5px;}
+  .mailer li{margin-bottom:4px;}
+  .lap-marker{display:inline-block; font-size:11px; font-weight:700; color:var(--navy); background:#eaf2fc; padding:2px 10px; border-radius:999px; margin-top:6px;}
+  .badge{font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; background:#f0f2f6; color:var(--grey);}
+  .badge.placeholder{background:#fdeef0; color:#a3323f;}
+  footer{background:#f5f7fb; padding:18px 28px; text-align:center; font-size:12px; color:var(--grey); border-top:1px solid var(--line);}
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none; margin:0;}
+    .print-btn{display:none;}
+    nav.jump{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page" id="top">
+
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span>EDUSPORT TRAVEL AND TOURS</div>
+    <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Customer Journey Series · Pilot Spotlight</div>
+    <h1>Booking Journey: <span class="accent">Pilot</span> Spotlight</h1>
+    <p>Real, sourced content for the two confirmed pilots: Ireland v South Africa (Short window, fast test) and Wimbledon 2027 (Long window, the fuller example). Generic mailer templates and mechanism live in the Booking Journey overview and Build Reference docs.</p>
+  </div>
+
+  <div class="leadstrip">🏁 Status: two pilots confirmed, Ireland v South Africa (21 Nov 2026) and Wimbledon 2027</div>
+
+  <div class="body">
+
+    <nav class="jump">
+      <h3>Jump to a section</h3>
+      <ol>
+        <li><a href="#ireland">🏉 Ireland v South Africa (Short window)</a></li>
+        <li><a href="#wimbledon">🎾 Wimbledon 2027 (Long window)</a></li>
+      </ol>
+    </nav>
+
+    <section id="ireland">
+      <h2><span class="num">1</span>Pilot Spotlight: Ireland v South Africa</h2>
+      <p class="sub">Nations Championship · Short window (3–1 months out) · Primary pilot</p>
+
+      <div class="callout good">
+        <strong>✅ Confirmed pilot, Short window</strong>
+        Ireland v South Africa, 21 November 2026, Aviva Stadium, Dublin, part of the new Nations Championship. At ~87 days out this is a deliberately fast, small-scale test, not a representative example of the full rollout, chosen to prove the mechanism and see how information flows without waiting months. Springbok-focused audience fit, same "keep the dream alive" energy this framework was built around.
+      </div>
+
+      <div class="spotlight">
+        <div class="spotlight-head">
+          <div>
+            <h3>Ireland v South Africa · Nations Championship</h3>
+            <div class="venue">Aviva Stadium · Dublin, Ireland · Saturday 21 November 2026</div>
+          </div>
+          <div class="flag">🏉</div>
+        </div>
+        <div class="spotlight-body">
+
+          <div class="mailer"><div class="grid-pos">1</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">You're Booked!</span><span class="mtiming">Immediately after booking</span></div>
+            <div class="msubject">"Your trip to Dublin is confirmed 🎉"</div>
+            <span class="lap-marker">Kick-off · Reusable, plus one urgent add</span>
+            <ul>
+              <li>Booking confirmation, consultant intro, hotel/ticket details and travel tips to follow</li>
+              <li>⚠️ <strong>Time-critical addition:</strong> with only ~12 weeks between booking and travel, and Irish visa processing alone able to take several weeks, the visa prompt can't wait for Mailer 3 like the standard template, it needs to be in this first send</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">2</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Make the Most of Your Trip</span><span class="mtiming">Shortly after booking</span></div>
+            <div class="msubject">"Discover local highlights and useful info for Dublin"</div>
+            <span class="lap-marker">Destination content</span>
+            <ul>
+              <li>🏉 The Match: Ireland's first meeting with the reigning World Champions in this new competition, Aviva Stadium, a compact, atmospheric ground a short walk from Dublin city centre</li>
+              <li>🌆 Explore: Dublin's compact enough to cover on foot, Temple Bar, Trinity College, and the Guinness Storehouse are all well within reach of the stadium</li>
+              <li>🚗 Getting Around: Dublin Airport (DUB) to Aviva Stadium is ~15km, about 15–25 minutes by taxi (approx $30–40) or the Aircoach/702 bus (~25–32 min, $9–14) direct to Lansdowne Road <span class="badge placeholder">confirm whether Edusport books transfers or leaves this to the customer</span></li>
+              <li>Tip: the stadium is a genuine 25-minute walk from Dublin city centre if staying centrally, no need for transport on matchday itself</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">3</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Travel Prep Checklist</span><span class="mtiming">Ahead of departure</span></div>
+            <div class="msubject">"A few things to tick off before you fly 🧳"</div>
+            <span class="lap-marker">Checklist, verified facts</span>
+            <ul>
+              <li>✅ Passport valid at least 6 months beyond your stay</li>
+              <li>✅ Visa: <strong>South African passport holders now need a visa to enter Ireland</strong> (a recent change, mid-2026), applied for by the customer directly via VFS Global. Fee and processing time vary by source, worth confirming current turnaround directly, but multiple guides cite several weeks, so this should already be in motion by the time this mailer lands, not started here</li>
+              <li>✅ Confirm flight details and baggage limits</li>
+              <li>✅ Keep digital and printed copies of tickets and travel insurance</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">4</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Final Countdown</span><span class="mtiming">A few days before travel</span></div>
+            <div class="msubject">"It's almost game day — get ready for an unforgettable trip!"</div>
+            <span class="lap-marker">Final straight</span>
+            <ul>
+              <li>Online check-in reminder, hotel details handy</li>
+              <li>🌧️ Packing note: Dublin in November runs cold and damp, typically 7–11°C by day, 3–6°C at night, with rain likely on more days than not. Pack layers, a warm coat, and definitely an umbrella, a real contrast to the South African summer they're leaving</li>
+              <li>Invites social tagging @EdusportTravel</li>
+            </ul>
+          </div></div>
+
+        </div>
+      </div>
+
+      <div class="callout good">
+        <strong>What's real vs what's placeholder</strong>
+        Fixture date and venue, the transfer details, Dublin's walkability, and November weather are all sourced and verified. The Irish visa requirement for South Africans is real and recent, worth Edusport double-checking the exact current fee and processing time before this goes live, sources vary. What's still a placeholder is Edusport's own process (who books transfers), flagged with a <span class="badge placeholder">pink tag</span>.
+      </div>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+    <section id="wimbledon">
+      <h2><span class="num">2</span>Pilot Spotlight: Wimbledon 2027</h2>
+      <p class="sub">Long window (9–12 months out) · Secondary pilot, plan now, event runs next year</p>
+
+      <div class="callout info">
+        <strong>Second pilot, Long window</strong>
+        28 June – 11 July 2027 (provisional, not yet confirmed on the official AELTC site), roughly 10 months out from today. Lower urgency than Ireland, but the content and planning work needs doing this year regardless. Full copy for the 10-mailer Long Window sequence, real Wimbledon facts in place of placeholders. Where a mailer genuinely needs to vary by which package was booked, it's flagged <span class="badge">tier-aware</span> rather than drafted per-package, since the tier identification mechanism this depends on is still an open question.
+      </div>
+
+      <div class="spotlight">
+        <div class="spotlight-head">
+          <div>
+            <h3>The Championships, Wimbledon</h3>
+            <div class="venue">All England Lawn Tennis Club · London, England · 28 Jun – 11 Jul 2027 (provisional)</div>
+          </div>
+          <div class="flag">🎾</div>
+        </div>
+        <div class="spotlight-body">
+
+          <div class="mailer"><div class="grid-pos">1</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Your Journey Starts Here</span><span class="mtiming">Immediately after booking</span></div>
+            <div class="msubject">"You're going to Wimbledon! Here's what happens next 🎾"</div>
+            <ul>
+              <li>Booking confirmed, consultant introduced as the point of contact, sets expectation for regular updates through to travel</li>
+              <li>Confirms the specific package booked (e.g. "Quarter Finals Day 1, Centre Court") back to the customer <span class="badge">tier-aware</span> — needs the package name pulled through from the booking, not hand-written per send</li>
+              <li>No destination facts needed here</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">2</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Discover Your Destination</span><span class="mtiming">~10 months before travel</span></div>
+            <div class="msubject">"Your Wimbledon travel guide — grass, tradition, and a very British institution 🎾"</div>
+            <ul>
+              <li>🎾 The Championships: first held in 1877, the oldest tennis tournament in the world and the oldest of the four Grand Slams — and the only one still played on grass</li>
+              <li>👗 The all-white dress code: a Wimbledon tradition unique among the majors, part of what makes it feel different the moment you arrive</li>
+              <li>🌳 Wimbledon Village and SW19: the walk from the station through the Village before you even reach the grounds is part of the experience, not just a commute</li>
+              <li>🍓 Strawberries and cream: the signature Wimbledon ritual <span class="badge placeholder">confirm current serving stat/price nearer the date</span></li>
+              <li>🏛️ Must-see spots for a free day <span class="badge placeholder">team to confirm 2–3 current recommendations</span></li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">3</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Plan Like a Pro</span><span class="mtiming">8–9 months before travel</span></div>
+            <div class="msubject">"A little prep goes a long way — your travel checklist 🧳"</div>
+            <ul>
+              <li>✅ Passport valid for at least 6 months from entry date</li>
+              <li>✅ Visa: South African passport holders need a UK Standard Visitor visa before travel — no visa-free entry and no ETA option for SA citizens, applied for online at gov.uk. Now issued as a digital eVisa rather than a passport stamp <span class="badge placeholder">confirm current fee and processing time at gov.uk before this send goes out, both change</span></li>
+              <li>✅ Travel insurance</li>
+              <li>✅ Optional add-ons: extending the stay in London, day trips beyond SW19</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">4</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Countdown to Kick-Off</span><span class="mtiming">6 months before travel</span></div>
+            <div class="msubject">"6 months to go — the countdown is on! 🎾"</div>
+            <ul>
+              <li>Behind-the-scenes reassurance: on-ground arrangements underway, travel services confirmed</li>
+              <li>Points to social channels for ongoing content, consistent with reactive/timely content living there rather than in this series</li>
+              <li>Note that match-day and court specifics for their package are still being finalised closer to the date <span class="badge">tier-aware</span></li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">5</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">The Countdown Continues</span><span class="mtiming">5–6 months before travel</span></div>
+            <div class="msubject">"Your Wimbledon adventure is getting closer — here's what to expect next!"</div>
+            <ul>
+              <li>Confirm flight and seating preferences, review insurance/visa status</li>
+              <li>Reinforces consultant contact details</li>
+              <li>Light reminder of which day(s)/court their package covers <span class="badge">tier-aware</span></li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">6</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Destination Highlights</span><span class="mtiming">4–5 months before travel</span></div>
+            <div class="msubject">"Discover the best of Wimbledon before you go 🎾"</div>
+            <ul>
+              <li>🏟️ Centre Court and No.1 Court explained: both have retractable roofs (Centre Court since 2009, No.1 Court since 2019), so play often continues even in rain — the outer courts don't have that protection</li>
+              <li>🚶 The Queue: a genuine Wimbledon institution for ground passes, worth knowing about as part of the culture even for package holders with confirmed seats</li>
+              <li>📅 Middle Sunday is now a scheduled play day <span class="badge placeholder">confirm this still holds for 2027, scheduling has shifted before</span></li>
+              <li>🏛️ The Wimbledon Lawn Tennis Museum, on-site, a solid landmark for a free morning or pre-match visit</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">7</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Plan Ahead for a Smooth Trip</span><span class="mtiming">~3–4 months before travel</span></div>
+            <div class="msubject">"Your pre-travel essentials — tick these off early ✅"</div>
+            <ul>
+              <li>Passport/visa re-check, notify the bank of UK travel</li>
+              <li>e-SIM purchase link</li>
+              <li>Vaccination/medication reminder dropped from the generic template here — not genuinely relevant for UK travel, kept only where it actually applies</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">8</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Behind the Scenes with Edusport</span><span class="mtiming">~3 months before travel</span></div>
+            <div class="msubject">"We're getting ready for Wimbledon — here's a sneak peek!"</div>
+            <ul>
+              <li>Reassurance-only send: booking being finalised, documents coming soon</li>
+              <li>Lightest content in the series — flagged as the strongest candidate to drop or merge with a neighbouring mailer</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">9</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">It's Almost Time!</span><span class="mtiming">4 weeks before travel</span></div>
+            <div class="msubject">"Your trip to Wimbledon is around the corner — here's what to expect 🎾"</div>
+            <ul>
+              <li>Final documents on the way (tickets, hotel, emergency contacts), on-call reps introduced closer to departure</li>
+              <li>🌦️ Packing note: London in late June/early July is mild but genuinely unpredictable, pack layers and something for rain — worth mentioning Centre/No.1 Court's roofs mean play often continues regardless, even if the outer courts don't</li>
+              <li>e-SIM link reminder</li>
+            </ul>
+          </div></div>
+
+          <div class="mailer"><div class="grid-pos">10</div><div class="mailer-content">
+            <div class="mtitle"><span class="mname">Final Pre-Departure Checklist</span><span class="mtiming">Just before travel</span></div>
+            <div class="msubject">"You're almost ready — final checklist before Wimbledon!"</div>
+            <ul>
+              <li>Passport/visa and ticket/document copies, flight times and baggage, insurance and emergency contacts</li>
+              <li>Sets expectation that Edusport won't be on-site, but the emergency number is available during travel</li>
+            </ul>
+          </div></div>
+
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <strong>Draw/seeding explainer doesn't fit this numbered cadence</strong>
+        The Wimbledon draw is typically announced only a few days before the Championships start, which won't reliably land inside Mailer 10's window for every booker depending on their travel date. Unlike a live results feed, the draw date is knowable in advance each year, so this is compatible with a single scheduled trigger-based send — but it needs to be built as its own extra step layered on the sequence above, not squeezed into one of the 10.
+      </div>
+
+      <div class="callout good">
+        <strong>What's real vs what's placeholder</strong>
+        Verified: the 1877 founding and Grand Slam history, grass-court status, the all-white dress code, Centre/No.1 Court roof dates, the Queue and Wimbledon Village as genuine institutions, and the UK visa requirement for South African passport holders (Standard Visitor visa, no waiver, no ETA, eVisa format). Left as placeholders rather than invented: current strawberries-and-cream pricing/stats, specific free-day recommendations, current visa fee and processing time, and whether Middle Sunday's play-day status still holds for 2027, flagged inline above with a <span class="badge placeholder">pink tag</span>.
+      </div>
+
+      <div class="callout info">
+        <strong>Open questions carried over</strong>
+        Whether Edusport sells a single Wimbledon package type or a hospitality/grounds-pass split (would reintroduce the tiering question the <span class="badge">tier-aware</span> tags above depend on); when the seeding/draw is typically confirmed relative to the event; who owns verifying attendance/history/prize-money stats against current AELTC sources before anything goes customer-facing. Backfill for existing bookers ahead of the January 2027 build/send start looks like a simpler one-time backfill given the single-track shape and short runway, worth confirming once actual booking-date spread is visible.
+      </div>
+      <a class="backtop" href="#top">↑ Back to top</a>
+    </section>
+
+  </div>
+
+  <footer>Edusport Travel · Booking Journey · Pilot Spotlight · Internal Use Only</footer>
+</div>
+</body>
+</html>
